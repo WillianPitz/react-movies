@@ -90,9 +90,9 @@ const List: React.FC = () => {
         variant="customInfiniteScroll"
       >
         <div
-          className={`${
-            searchMovies && `h-auto`
-          } w-full h-[calc(100vh-180px)] flex flex-wrap gap-20 justify-center text-center m-10`}
+          className={` w-full  flex flex-wrap gap-20 justify-center text-center m-10 ${
+            searchMovies ? "h-auto" : "h-[calc(100vh-180px)]"
+          }`}
         >
           {filteredOptions.length !== 0 ? (
             filteredOptions.map((movie: Movie, index: number) => {
