@@ -73,12 +73,28 @@ const List: React.FC = () => {
 
   return (
     <div>
+      {(swrMovies.size <= 1 && swrMovies.isValidating) ||
+        (swrMoviesGenres.isValidating && (
+          <div className="text-base font-semibold text-slate-700 absolute left-[50%] flex items-center gap-2">
+            <CircleNotch
+              size={28}
+              color="#312b2b"
+              weight="light"
+              className="animate-spin"
+            />
+            Carregando...
+          </div>
+        ))}
       <CustomInfiniteScroll
         onLoad={() => swrMovies.setSize(swrMovies.size + 1)}
         variant="customInfiniteScroll"
       >
-        <div className="w-full h-[calc(100vh-180px)] flex flex-wrap gap-20 justify-center text-center m-10">
-          {filteredOptions.length > 0 ? (
+        <div
+          className={`${
+            searchMovies && `h-auto`
+          } w-full h-[calc(100vh-180px)] flex flex-wrap gap-20 justify-center text-center m-10`}
+        >
+          {filteredOptions.length !== 0 ? (
             filteredOptions.map((movie: Movie, index: number) => {
               return (
                 <MovieCard
@@ -90,11 +106,11 @@ const List: React.FC = () => {
                 />
               );
             })
-          ) : (
+          ) : !swrMovies.isValidating ? (
             <div className="flex justify-center">
               Nenhum resultado para: <p className="font-bold">{searchMovies}</p>
             </div>
-          )}
+          ) : null}
         </div>
         {swrMovies.isValidating && swrMovies.size > 1 && (
           <div className="flex justify-center absolute right-0 left-0 bottom-5">

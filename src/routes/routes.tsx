@@ -5,7 +5,7 @@ import List from "../pages/List/List";
 
 export default function Routes() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Router>
         <Route
           path="/"

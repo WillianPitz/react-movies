@@ -23,7 +23,7 @@ const MovieCard = ({
   handleFavorite,
   handleAddToCart,
 }: MoviesProps) => {
-  const [buttonText, setButtonText] = useState("Adicionado");
+  const [buttonText, setButtonText] = useState("");
   const { favorites, cart } = useAppContext();
 
   const showGenres = (movie: Movie) => {
@@ -103,12 +103,12 @@ const MovieCard = ({
             >
               {isInCart ? (
                 <div
-                  className="relative flex justify-center gap-3"
+                  className="flex justify-center gap-3"
                   onMouseEnter={() => setButtonText("Remover")}
-                  onMouseLeave={() => setButtonText("Adicionar")}
+                  onMouseLeave={() => setButtonText("No carrinho")}
                 >
                   {buttonText}
-                  {buttonText === "Adicionar" ? (
+                  {buttonText === "No carrinho" ? (
                     <CheckCircle size={30} weight="fill" />
                   ) : (
                     <Trash size={30} weight="fill" />
