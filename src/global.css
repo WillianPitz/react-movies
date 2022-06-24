@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  
+  ::-webkit-scrollbar {
+    @apply w-2 rounded-lg bg-none
+  }
+  ::-webkit-scrollbar-track-piece {
+    @apply bg-[#fff] rounded-md
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-lg bg-[#6558F5] h-10
+  }
+}

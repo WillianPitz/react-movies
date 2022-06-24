@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "jsx": "react-jsx",
+    "lib": [
+      "es5",
+      "dom"
+    ],
+    "types": [
+      "cypress",
+      "@testing-library/cypress",
+    ],
+    "baseUrl": "../src"
+  }
+}
