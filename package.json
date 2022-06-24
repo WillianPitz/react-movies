@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "cy:ct": "cypress open --component",
+    "cy:run": "cypress run --component"
   },
   "dependencies": {
     "@headlessui/react": "^1.6.5",
