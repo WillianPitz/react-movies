@@ -9,9 +9,13 @@ No diretorio do projeto você pode utilizar os comandos:
 Inicia o app no modo de desenvolvimento.
 Acesse [http://localhost:3000](http://localhost:3000) para visualizar no seu navegador.
 
-### `npm run test`
+### `npm run cy:run`
 
 Inicia o processo de testes do projeto.
+
+### `npm run cy:ct`
+
+Inicia o visualizador de testes do Cypress no navegador.
 
 ---
 
